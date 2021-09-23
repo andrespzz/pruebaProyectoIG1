@@ -4,12 +4,14 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
+import javax.swing.JSpinner;
 
 public class PNuevaPersona extends JPanel {
 	private JTextField txtApellidos;
 	private JTextField txtNombrePersona;
 	private JTextField txtDniPersona;
 	private JTextField txtFechanac;
+	private JSpinner spnEdad;
 	public PNuevaPersona() {
 		initComponents();
 	}
@@ -59,6 +61,14 @@ public class PNuevaPersona extends JPanel {
 		txtFechanac.setBounds(391, 141, 108, 20);
 		add(txtFechanac);
 		txtFechanac.setColumns(10);
+		
+		JLabel lblEdad = new JLabel("Edad");
+		lblEdad.setBounds(39, 183, 46, 14);
+		add(lblEdad);
+		
+		spnEdad = new JSpinner();
+		spnEdad.setBounds(95, 180, 53, 20);
+		add(spnEdad);
 
 	}
 }
