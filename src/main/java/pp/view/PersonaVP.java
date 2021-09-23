@@ -8,6 +8,9 @@ import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JScrollPane;
+
+import pp.control.PersonaListener;
 
 public class PersonaVP extends JFrame {
 
@@ -23,6 +26,7 @@ public class PersonaVP extends JFrame {
 	private JMenuItem mntmEditarPersona;
 	private JMenuItem mntmEliminarPersona;
 	private JMenuItem mntmSalir;
+	private JScrollPane scrpContenedor;
 
 	public PersonaVP() {
 		initComponents();
@@ -38,8 +42,8 @@ public class PersonaVP extends JFrame {
 		setLocation((pantalla.width - ventana.width) / 2, (pantalla.height - ventana.height) / 2);
 		getContentPane().setLayout(new BorderLayout(0, 0));
 
-		JPanel panel = new JPanel();
-		getContentPane().add(panel, BorderLayout.CENTER);
+		scrpContenedor = new JScrollPane();
+		getContentPane().add(scrpContenedor, BorderLayout.CENTER);
 
 	}
 
@@ -58,6 +62,18 @@ public class PersonaVP extends JFrame {
 
 		mntmSalir = new JMenuItem(MNTMSALIR);
 		menuBar.add(mntmSalir);
+	}
+
+	public void hacerVisible() {
+		setVisible(true);
+	}
+
+	public void cargarPanel(JPanel panel) {
+		scrpContenedor.setViewportView(panel);
+	}
+	
+	public void setListener(PersonaListener listener) {
+		mntmAnadirPersona.addActionListener(listener);
 	}
 
 }
