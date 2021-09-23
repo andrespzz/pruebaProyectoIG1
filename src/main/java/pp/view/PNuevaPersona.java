@@ -9,11 +9,13 @@ import javax.swing.JTextField;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
 
+import pp.control.PersonaListener;
 import pp.model.Persona;
 
 import javax.swing.JButton;
 
 public class PNuevaPersona extends JPanel {
+	private static final long serialVersionUID = 1L;
 	public static final String BTN_ANADIR = "Añadir persona";
 	public static final String BTN_LIMPIAR = "Limpiar campos";
 
@@ -25,6 +27,7 @@ public class PNuevaPersona extends JPanel {
 	private JButton btnAnadirPersona;
 	private JTextField txtTelefono;
 	private JTextField txtDireccion;
+	private JButton btnLimpiarCampoAnadirPersona;
 
 	public PNuevaPersona() {
 		initComponents();
@@ -72,6 +75,7 @@ public class PNuevaPersona extends JPanel {
 		add(lblFechaNac);
 
 		txtFechanac = new JTextField();
+		txtFechanac.setToolTipText("dd/mm/yyyy");
 		txtFechanac.setBounds(397, 98, 99, 20);
 		add(txtFechanac);
 		txtFechanac.setColumns(10);
@@ -107,7 +111,7 @@ public class PNuevaPersona extends JPanel {
 		btnAnadirPersona.setBounds(135, 206, 128, 23);
 		add(btnAnadirPersona);
 
-		JButton btnLimpiarCampoAnadirPersona = new JButton(BTN_LIMPIAR);
+		btnLimpiarCampoAnadirPersona = new JButton(BTN_LIMPIAR);
 		btnLimpiarCampoAnadirPersona.setBounds(280, 206, 128, 23);
 		add(btnLimpiarCampoAnadirPersona);
 
@@ -115,6 +119,11 @@ public class PNuevaPersona extends JPanel {
 
 	public void hacerVisible() {
 		setVisible(true);
+	}
+
+	public void setListener(PersonaListener listener) {
+		btnAnadirPersona.addActionListener(listener);
+		btnLimpiarCampoAnadirPersona.addActionListener(listener);
 	}
 
 	public Persona getDatos() {
@@ -133,6 +142,8 @@ public class PNuevaPersona extends JPanel {
 
 				if (dni.isBlank()) {
 					mostrarMsjError("Debe introducir el DNI");
+				} else if (dni.length() != 9) {
+					mostrarMsjError("El DNI debe contener 9 caracteres");
 				} else {
 					String fechaNac = txtFechanac.getText();
 					if (fechaNac.isBlank()) {
@@ -145,10 +156,14 @@ public class PNuevaPersona extends JPanel {
 							String telefono = txtTelefono.getText();
 							if (telefono.isBlank()) {
 								mostrarMsjError("Debe introducir un número de teléfono");
+							} else if (telefono.length() != 9) {
+								mostrarMsjError("El número de teléfono debe contener 9 caracteres");
 							} else {
 								String direccion = txtDireccion.getText();
 								if (direccion.isBlank()) {
 									mostrarMsjError("Debe introducir una dirección");
+								} else {
+									persona = new Persona(dni, nombre, apellidos, fechaNac, edad, telefono, direccion);
 								}
 							}
 						}
@@ -162,6 +177,22 @@ public class PNuevaPersona extends JPanel {
 
 	private void mostrarMsjError(String msj) {
 		JOptionPane.showMessageDialog(this, msj, "Error de operación", JOptionPane.ERROR_MESSAGE);
+
+	}
+
+	public void mostrarMsjInfo(String msj) {
+		JOptionPane.showMessageDialog(this, msj, "Información de operación", JOptionPane.INFORMATION_MESSAGE);
+
+	}
+
+	public void limpiarComponentes() {
+		txtNombrePersona.setText("");
+		txtApellidos.setText("");
+		txtDniPersona.setText("");
+		txtFechanac.setText("");
+		spnEdad.setValue(1);
+		txtTelefono.setText("");
+		txtDireccion.setText("");
 
 	}
 }

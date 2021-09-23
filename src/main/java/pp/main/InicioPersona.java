@@ -19,6 +19,7 @@ public class InicioPersona {
 				PersonaListener l = new PersonaListener(vp, pnp);
 
 				vp.setListener(l);
+				pnp.setListener(l);
 
 				vp.hacerVisible();
 

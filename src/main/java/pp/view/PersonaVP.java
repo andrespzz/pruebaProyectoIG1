@@ -8,6 +8,7 @@ import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 
 import pp.control.PersonaListener;
@@ -29,6 +30,7 @@ public class PersonaVP extends JFrame {
 	private JScrollPane scrpContenedor;
 
 	public PersonaVP() {
+		super("Gestión de personas");
 		initComponents();
 		crearMenu();
 	}
@@ -71,9 +73,22 @@ public class PersonaVP extends JFrame {
 	public void cargarPanel(JPanel panel) {
 		scrpContenedor.setViewportView(panel);
 	}
-	
+
 	public void setListener(PersonaListener listener) {
 		mntmAnadirPersona.addActionListener(listener);
+		mntmEditarPersona.addActionListener(listener);
+		mntmEliminarPersona.addActionListener(listener);
+		mntmSalir.addActionListener(listener);
+	}
+
+	public void mostrarMsjConfirm() {
+		int opcion = JOptionPane.showConfirmDialog(this, "¿Estás seguro de que deseas cerrar la aplicación?",
+				"Confirmación de salida", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);
+
+		if (opcion == JOptionPane.YES_NO_OPTION) {
+			System.exit(0);
+		}
+
 	}
 
 }

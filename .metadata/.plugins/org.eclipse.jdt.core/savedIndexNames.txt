@@ -1,0 +1,6 @@
+INDEX VERSION 1.131+C:\Users\apere\Documents\DAM_2\Desarrollo de Interfaces\proyecto\.metadata\.plugins\org.eclipse.jdt.core
+3702019853.index
+2023717660.index
+2466313275.index
+1552042055.index
+2390277105.index

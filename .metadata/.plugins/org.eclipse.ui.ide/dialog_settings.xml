@@ -7,6 +7,8 @@
 		<item key="WizardProjectsImportPage.STORE_CLOSE_CREATED_PROJECTS_ID" value="false"/>
 		<item key="WizardProjectsImportPage.STORE_HIDE_CONFLICTING_PROJECTS_ID" value="false"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\apere\Documents\DAM_2\Desarrollo de Interfaces\WS_T1"/>
+			<item value="C:\Users\apere\Documents\DAM_2\Desarrollo de Interfaces\proyecto"/>
 			<item value="C:\Users\diego\Desktop\pruebaProyectoIG1"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">

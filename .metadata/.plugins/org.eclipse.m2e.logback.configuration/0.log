@@ -1,1 +1,16 @@
 2021-09-23 12:39:30,960 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2021-09-23 17:46:42,488 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2021-09-23 17:47:53,213 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2021-09-23 17:48:22,982 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2021-09-23 17:48:41,395 [Worker-35: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: dam2:proyecto:0.0.1-SNAPSHOT @ C:\Users\apere\Documents\DAM_2\Desarrollo de Interfaces\WS_T1\proyecto\pom.xml.
+2021-09-23 17:48:41,395 [Worker-12: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: dam2:proyecto:0.0.1-SNAPSHOT @ C:\Users\apere\Documents\DAM_2\Desarrollo de Interfaces\WS_T1\proyecto\pom.xml.
+2021-09-23 17:48:42,145 [Worker-35: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-09-23 17:48:42,145 [Worker-35: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\apere\Documents\DAM_2\Desarrollo de Interfaces\WS_T1\proyecto\src\main\resources
+2021-09-23 17:48:42,148 [Worker-35: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-09-23 17:48:42,149 [Worker-35: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\apere\Documents\DAM_2\Desarrollo de Interfaces\WS_T1\proyecto\src\test\resources
+2021-09-23 17:48:42,859 [Worker-1: Updating Maven Dependencies] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: dam2:proyecto:0.0.1-SNAPSHOT @ C:\Users\apere\Documents\DAM_2\Desarrollo de Interfaces\WS_T1\proyecto\pom.xml.
+2021-09-23 17:48:43,617 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-09-23 17:48:43,617 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\apere\Documents\DAM_2\Desarrollo de Interfaces\WS_T1\proyecto\src\main\resources
+2021-09-23 17:48:43,627 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2021-09-23 17:48:43,629 [Worker-31: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\apere\Documents\DAM_2\Desarrollo de Interfaces\WS_T1\proyecto\src\test\resources
+2021-09-23 17:50:09,337 [Worker-5: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

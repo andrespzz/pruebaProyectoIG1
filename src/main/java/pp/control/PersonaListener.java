@@ -15,7 +15,6 @@ public class PersonaListener implements ActionListener {
 	private PersonaVP pvp = new PersonaVP();
 	private PNuevaPersona pnp = new PNuevaPersona();
 	private PersonaPersistencia model;
-	
 
 	public PersonaListener(PersonaVP pvp, PNuevaPersona pnp) {
 		super();
@@ -29,20 +28,27 @@ public class PersonaListener implements ActionListener {
 		if (ev.getSource() instanceof JMenuItem) {
 			if (ev.getActionCommand().equalsIgnoreCase(PersonaVP.ANADIRPERSONA)) {
 				pvp.cargarPanel(pnp);
+			} else if (ev.getActionCommand().equalsIgnoreCase(PersonaVP.MNTMSALIR)) {
+				pvp.mostrarMsjConfirm();
 			}
 		} else if (ev.getSource() instanceof JButton) {
 			if (ev.getActionCommand().equalsIgnoreCase(PNuevaPersona.BTN_ANADIR)) {
 				Persona persona = pnp.getDatos();
-				
+
 				if (persona != null) {
 					int res = model.insertPersona(persona);
-					
-					if (res = 1) {
-						
+
+					if (res == 1) {
+						pnp.mostrarMsjInfo("La persona se ha añadido correctamente");
+						pnp.limpiarComponentes();
+					} else {
+						pnp.mostrarMsjInfo("No se ha podido añadir el usuario");
 					}
 				}
+			} else if (ev.getActionCommand().equalsIgnoreCase(PNuevaPersona.BTN_LIMPIAR)) {
+				pnp.limpiarComponentes();
 			}
-			
+
 		}
 	}
 

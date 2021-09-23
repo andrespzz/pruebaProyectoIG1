@@ -9,8 +9,6 @@ import java.util.Properties;
 
 import org.sqlite.SQLiteConfig;
 
-import com.sun.jdi.connect.spi.Connection;
-
 public class AccesoDb {
 
 	private String driver;
