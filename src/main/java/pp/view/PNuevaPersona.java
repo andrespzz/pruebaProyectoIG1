@@ -47,7 +47,7 @@ public class PNuevaPersona extends JPanel {
 		add(lblDniPersona);
 		
 		txtDniPersona = new JTextField();
-		txtDniPersona.setBounds(95, 141, 137, 20);
+		txtDniPersona.setBounds(105, 134, 137, 20);
 		add(txtDniPersona);
 		txtDniPersona.setColumns(10);
 		
