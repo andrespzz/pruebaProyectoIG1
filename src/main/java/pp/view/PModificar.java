@@ -15,7 +15,8 @@ public class PModificar extends JPanel {
 	}
 
 	private void initComponents() {
-		// TODO Auto-generated method stub
+		setSize(PersonaVP.ANCHO - 70, PersonaVP.ALTO - 30);
+		setLayout(null);
 		
 	}
 
