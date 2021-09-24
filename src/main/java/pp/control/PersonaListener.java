@@ -8,18 +8,24 @@ import javax.swing.JMenuItem;
 
 import pp.bd.PersonaPersistencia;
 import pp.model.Persona;
+import pp.view.PEliminarPersona;
+import pp.view.PModificar;
 import pp.view.PNuevaPersona;
 import pp.view.PersonaVP;
 
 public class PersonaListener implements ActionListener {
 	private PersonaVP pvp = new PersonaVP();
 	private PNuevaPersona pnp = new PNuevaPersona();
+	private PModificar pmdf = new PModificar();
+	private PEliminarPersona pep = new PEliminarPersona();
 	private PersonaPersistencia model;
 
-	public PersonaListener(PersonaVP pvp, PNuevaPersona pnp) {
+	public PersonaListener(PersonaVP pvp, PNuevaPersona pnp, PModificar pmdf, PEliminarPersona pep) {
 		super();
 		this.pvp = pvp;
 		this.pnp = pnp;
+		this.pmdf = pmdf;
+		this.pep = pep;
 		model = new PersonaPersistencia();
 	}
 
@@ -28,6 +34,10 @@ public class PersonaListener implements ActionListener {
 		if (ev.getSource() instanceof JMenuItem) {
 			if (ev.getActionCommand().equalsIgnoreCase(PersonaVP.ANADIRPERSONA)) {
 				pvp.cargarPanel(pnp);
+			} else if (ev.getActionCommand().equalsIgnoreCase(PersonaVP.EDITARPERSONA)){
+				pvp.cargarPanel(pmdf);
+			} else if (ev.getActionCommand().equalsIgnoreCase(PersonaVP.ELIMINARPERSONA)) {
+				pvp.cargarPanel(pep);
 			} else if (ev.getActionCommand().equalsIgnoreCase(PersonaVP.MNTMSALIR)) {
 				pvp.mostrarMsjConfirm();
 			}

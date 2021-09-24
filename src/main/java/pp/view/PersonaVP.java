@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 
 import pp.control.PersonaListener;
+import javax.swing.JLabel;
 
 public class PersonaVP extends JFrame {
 
