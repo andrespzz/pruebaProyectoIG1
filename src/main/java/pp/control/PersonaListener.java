@@ -34,7 +34,7 @@ public class PersonaListener implements ActionListener {
 		if (ev.getSource() instanceof JMenuItem) {
 			if (ev.getActionCommand().equalsIgnoreCase(PersonaVP.ANADIRPERSONA)) {
 				pvp.cargarPanel(pnp);
-			} else if (ev.getActionCommand().equalsIgnoreCase(PersonaVP.EDITARPERSONA)){
+			} else if (ev.getActionCommand().equalsIgnoreCase(PersonaVP.EDITARPERSONA)) {
 				pvp.cargarPanel(pmdf);
 			} else if (ev.getActionCommand().equalsIgnoreCase(PersonaVP.ELIMINARPERSONA)) {
 				pvp.cargarPanel(pep);
@@ -57,8 +57,38 @@ public class PersonaListener implements ActionListener {
 				}
 			} else if (ev.getActionCommand().equalsIgnoreCase(PNuevaPersona.BTN_LIMPIAR)) {
 				pnp.limpiarComponentes();
-			}
+			} else if (ev.getSource() instanceof JButton) {
+				if (ev.getActionCommand().equalsIgnoreCase(PModificar.BTN_BUSCAR)) {
+					String nombre = pmdf.getNomPersona();
 
+					Persona persona = model.selecNomPers(nombre);
+
+					if (nombre.isEmpty()) {
+						pmdf.mostrarError("Debe introducir un nombre");
+					} else if (persona != null) {
+						pmdf.cargarDatos(persona);
+					} else {
+						pmdf.mostrarMsjInfo("No se han encontrado datos");
+					}
+
+				} else if (ev.getActionCommand().equalsIgnoreCase(PModificar.BTN_GUARDAR)) {
+					Persona persona = pmdf.getDatos();
+
+					int pers = 0;
+					if (persona != null) {
+						pers = model.updatePersona(persona);
+					}
+
+					if (pers == 1) {
+						pmdf.mostrarMsjInfo("Se han modificado los datos de la persona");
+					} else {
+						pmdf.mostrarError("No se han modificado los datos");
+					}
+
+				} else if (ev.getActionCommand().equals(PModificar.BTN_CANCELAR)) {
+					pmdf.limpiarComponentes();
+				}
+			}
 		}
 	}
 
