@@ -25,6 +25,7 @@ public class InicioPersona {
 				vp.setListener(l);
 				pnp.setListener(l);
 				pmdf.setListener(l);
+				pep.setListener(l);
 
 				vp.hacerVisible();
 
