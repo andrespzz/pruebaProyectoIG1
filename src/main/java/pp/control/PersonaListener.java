@@ -2,9 +2,11 @@ package pp.control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 
 import pp.bd.PersonaPersistencia;
 import pp.model.Persona;
@@ -38,6 +40,7 @@ public class PersonaListener implements ActionListener {
 				pvp.cargarPanel(pmdf);
 			} else if (ev.getActionCommand().equalsIgnoreCase(PersonaVP.ELIMINARPERSONA)) {
 				pvp.cargarPanel(pep);
+				consultarTablaEliminar();
 			} else if (ev.getActionCommand().equalsIgnoreCase(PersonaVP.MNTMSALIR)) {
 				pvp.mostrarMsjConfirm();
 			}
@@ -87,9 +90,36 @@ public class PersonaListener implements ActionListener {
 
 				} else if (ev.getActionCommand().equals(PModificar.BTN_CANCELAR)) {
 					pmdf.limpiarComponentes();
+				} else if (ev.getActionCommand().equals(PEliminarPersona.BTN_ELIMINAR)) {
+					String dniPer = pep.getPerSeleccionado();
+					
+					if (!dniPer.equals("")) {
+						int opcion = JOptionPane.showConfirmDialog(pep, "Se va a eliminar el registro "
+								+ "seleccionado. ¿Desea continuar?", 
+								"Confirmación de borrado", JOptionPane.YES_NO_OPTION,
+								JOptionPane.QUESTION_MESSAGE);
+						
+						if (opcion == JOptionPane.YES_OPTION) {
+							int res = model.deletePersonas(dniPer);
+		
+							if (res == 1) {
+								pep.mostrarMsjInfo("Se ha eliminado el restaurante con exito");
+								consultarTablaEliminar();
+							} else {
+								pep.mostrarMsjError("No se ha podido eliminar la persona");
+							}
+						}
+					}
 				}
 			}
 		}
+	}
+	
+	private void consultarTablaEliminar() {
+		ArrayList<Persona> listaPersonas;
+		
+		listaPersonas = model.selectPersonas();
+		pep.cargarTabla(listaPersonas);
 	}
 
 }
