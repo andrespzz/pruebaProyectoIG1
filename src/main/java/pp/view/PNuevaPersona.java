@@ -5,6 +5,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
+
 import javax.swing.JTextField;
 import javax.swing.JSpinner;
 import javax.swing.SpinnerNumberModel;
@@ -195,4 +196,5 @@ public class PNuevaPersona extends JPanel {
 		txtDireccion.setText("");
 
 	}
+
 }

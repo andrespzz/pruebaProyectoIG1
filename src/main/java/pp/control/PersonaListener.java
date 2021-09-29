@@ -46,9 +46,9 @@ public class PersonaListener implements ActionListener {
 				Persona persona = pnp.getDatos();
 
 				if (persona != null) {
-					int res = model.insertPersona(persona);
+					int per = model.insertPersona(persona);
 
-					if (res == 1) {
+					if (per == 1) {
 						pnp.mostrarMsjInfo("La persona se ha añadido correctamente");
 						pnp.limpiarComponentes();
 					} else {
@@ -77,10 +77,11 @@ public class PersonaListener implements ActionListener {
 					int pers = 0;
 					if (persona != null) {
 						pers = model.updatePersona(persona);
+						pers++;
 					}
 
 					if (pers == 1) {
-						pmdf.mostrarMsjInfo("Se han modificado los datos de la persona");
+						pmdf.mostrarMsjInfo("Se han modificado los datos");
 					} else {
 						pmdf.mostrarError("No se han modificado los datos");
 					}

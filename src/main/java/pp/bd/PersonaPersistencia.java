@@ -60,19 +60,19 @@ public class PersonaPersistencia {
 
 	public Persona selecNomPers(String nombre) {
 		Persona pers = null;
-		
-		String query = "SELECT DNI, NOMBRE, APELLIDOS, F_NACIMIENTO, EDAD, TELEFONO, DIRECCION WHERE NOMBRE LIKE ?";
-		
+
+		String query = "SELECT DNI, NOMBRE, APELLIDOS, F_NACIMIENTO, EDAD, TELEFONO, DIRECCION FROM PERSONAS WHERE NOMBRE LIKE ?";
+
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rslt = null;
-		
+
 		try {
 			con = adb.getConexion();
 			pstmt = con.prepareStatement(query);
 			pstmt.setString(1, "%" + nombre + "%");
 			rslt = pstmt.executeQuery();
-			
+
 			String nom;
 			String dni;
 			String ape;
@@ -80,8 +80,8 @@ public class PersonaPersistencia {
 			int edad;
 			String telf;
 			String dir;
-			
-			while(rslt.next()) {
+
+			while (rslt.next()) {
 				dni = rslt.getString(1);
 				nom = rslt.getString(2);
 				ape = rslt.getString(3);
@@ -89,7 +89,7 @@ public class PersonaPersistencia {
 				edad = rslt.getInt(5);
 				telf = rslt.getString(6);
 				dir = rslt.getString(7);
-				
+
 				pers = new Persona(dni, nom, ape, fnac, edad, telf, dir);
 			}
 		} catch (ClassNotFoundException e) {
@@ -98,9 +98,12 @@ public class PersonaPersistencia {
 			e.printStackTrace();
 		} finally {
 			try {
-				if (rslt != null) rslt.close();
-				if (pstmt != null) pstmt.close();
-				if (con != null) con.close();
+				if (rslt != null)
+					rslt.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (con != null)
+					con.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -109,22 +112,19 @@ public class PersonaPersistencia {
 
 	}
 
-
 	public int updatePersona(Persona persona) {
-		
-		String query = "UPDATE PERSONAS SET DNI = ?, NOMBRE = ?, APELLIDOS = ?, F_NACIMIENTO = ?, EDAD = ?, TELEFONO = ?, DIRECCION = ? WHERE NOMBRE = ?";
-		
-		Connection con = null;
-		//El preparedStatement se usa cuando tenemos una interrogacion en la query.
-		PreparedStatement pstmt = null;
 		int pers = 0;
-		
+
+		String query = "UPDATE PERSONAS SET DNI = ?, APELLIDOS = ?, F_NACIMIENTO = ?, EDAD = ?, TELEFONO = ?, DIRECCION = ? WHERE NOMBRE = ?";
+
+		Connection con = null;
+		// El preparedStatement se usa cuando tenemos una interrogacion en la query.
+		PreparedStatement pstmt = null;
 
 		try {
 			con = adb.getConexion();
-			
 			pstmt = con.prepareStatement(query);
-			
+
 			pstmt.setString(1, persona.getDni());
 			pstmt.setString(2, persona.getNombre());
 			pstmt.setString(3, persona.getApellidos());
@@ -132,16 +132,16 @@ public class PersonaPersistencia {
 			pstmt.setInt(5, persona.getEdad());
 			pstmt.setString(6, persona.getTelefono());
 			pstmt.setString(7, persona.getDireccion());
-			
-			//res acumula el numero de registros modificados
+
+			// res acumula el numero de registros modificados
 			pers = pstmt.executeUpdate();
-			
+
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
 			pers = -1;
 			e.printStackTrace();
-		}finally {
+		} finally {
 			try {
 				if (pstmt != null) pstmt.close();
 				if (con != null) con.close();
@@ -149,7 +149,7 @@ public class PersonaPersistencia {
 				e.printStackTrace();
 			}
 		}
-	
+
 		return pers;
 	}
 
