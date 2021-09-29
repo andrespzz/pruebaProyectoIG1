@@ -2,6 +2,7 @@ package pp.control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JMenuItem;
@@ -38,6 +39,7 @@ public class PersonaListener implements ActionListener {
 				pvp.cargarPanel(pmdf);
 			} else if (ev.getActionCommand().equalsIgnoreCase(PersonaVP.ELIMINARPERSONA)) {
 				pvp.cargarPanel(pep);
+				consultarTablaEliminar();
 			} else if (ev.getActionCommand().equalsIgnoreCase(PersonaVP.MNTMSALIR)) {
 				pvp.mostrarMsjConfirm();
 			}
@@ -87,9 +89,18 @@ public class PersonaListener implements ActionListener {
 
 				} else if (ev.getActionCommand().equals(PModificar.BTN_CANCELAR)) {
 					pmdf.limpiarComponentes();
+				} else if (ev.getActionCommand().equals(PEliminarPersona.BTN_ELIMINAR)) {
+					
 				}
 			}
 		}
+	}
+	
+	private void consultarTablaEliminar() {
+		ArrayList<Persona> listaPersonas = null;
+		
+		listaPersonas = model.selectPersonas();
+		pep.cargarTabla(listaPersonas);
 	}
 
 }
