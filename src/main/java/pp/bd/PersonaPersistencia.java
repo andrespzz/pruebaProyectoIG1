@@ -118,7 +118,6 @@ public class PersonaPersistencia {
 		String query = "UPDATE PERSONAS SET DNI = ?, APELLIDOS = ?, F_NACIMIENTO = ?, EDAD = ?, TELEFONO = ?, DIRECCION = ? WHERE NOMBRE = ?";
 
 		Connection con = null;
-		// El preparedStatement se usa cuando tenemos una interrogacion en la query.
 		PreparedStatement pstmt = null;
 
 		try {
@@ -126,12 +125,13 @@ public class PersonaPersistencia {
 			pstmt = con.prepareStatement(query);
 
 			pstmt.setString(1, persona.getDni());
-			pstmt.setString(2, persona.getNombre());
-			pstmt.setString(3, persona.getApellidos());
-			pstmt.setString(4, persona.getFechaNac());
-			pstmt.setInt(5, persona.getEdad());
-			pstmt.setString(6, persona.getTelefono());
-			pstmt.setString(7, persona.getDireccion());
+			pstmt.setString(2, persona.getApellidos());
+			pstmt.setString(3, persona.getFechaNac());
+			pstmt.setInt(4, persona.getEdad());
+			pstmt.setString(5, persona.getTelefono());
+			pstmt.setString(6, persona.getDireccion());
+			pstmt.setString(7, persona.getNombre());
+			
 
 			// res acumula el numero de registros modificados
 			pers = pstmt.executeUpdate();

@@ -77,7 +77,6 @@ public class PersonaListener implements ActionListener {
 					int pers = 0;
 					if (persona != null) {
 						pers = model.updatePersona(persona);
-						pers++;
 					}
 
 					if (pers == 1) {

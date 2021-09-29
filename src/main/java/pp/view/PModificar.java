@@ -151,7 +151,7 @@ public class PModificar extends JPanel {
 				String telefono = txtTelefono.getText();
 				String direccion = txtDireccion.getText();
 
-				persIn = new Persona(nombre, apellidos, dni, fechaNac, edad, telefono, direccion);
+				persIn = new Persona(dni, nombre, apellidos, fechaNac, edad, telefono, direccion);
 			}
 
 		}
