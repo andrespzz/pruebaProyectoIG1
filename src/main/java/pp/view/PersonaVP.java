@@ -24,33 +24,55 @@ import javax.swing.JLabel;
  */
 public class PersonaVP extends JFrame {
 	/**
-	 * Variables estáticas de acceso público.
-	 * 
-	 * @param ANCHO           Variable estática para representar el ancho de la
-	 *                        ventana principal.
-	 * @param ALTO            Variable estática para representar el alto de la
-	 *                        ventana principal.
-	 * @param ANADIRPERSONA   Variable estática que contiene el texto de una opción
-	 *                        de menú.
-	 * @param EDITARPERSONA   Variable estática que contiene el texto de una opción
-	 *                        de menú.
-	 * @param ELIMINARPERSONA Variable estática que contiene el texto de una opción
-	 *                        de menú.
-	 * @param MNTMSALIR       Variable estática que contiene el texto de una opción
-	 *                        de menú.
+	 * ANCHO Variable estática para representar el ancho de la ventana principal.
 	 */
 	public static final int ANCHO = 770;
+	/**
+	 * ALTO Variable estática para representar el alto de la ventana principal.
+	 */
 	public static final int ALTO = 550;
 
+	/**
+	 * ANADIRPERSONA Variable estática que contiene el texto de una opción de menú.
+	 */
 	public static final String ANADIRPERSONA = "Añadir nueva persona";
+	/**
+	 * EDITARPERSONA Variable estática que contiene el texto de una opción de menú.
+	 */
 	public static final String EDITARPERSONA = "Editar persona";
+	/**
+	 * ELIMINARPERSONA Variable estática que contiene el texto de una opción de
+	 * menú.
+	 */
 	public static final String ELIMINARPERSONA = "Consultar / eliminar persona";
+	/**
+	 * MNTMSALIR Variable estática que contiene el texto de una opción de menú.
+	 */
 	public static final String MNTMSALIR = "Salir";
 
+	/**
+	 * mntmAnadirPersona Variable privada de tipo JMenuItem para la pestaña del menú
+	 * añadir persona.
+	 */
 	private JMenuItem mntmAnadirPersona;
+	/**
+	 * mntmEditarPersona Variable privada de tipo JMenuItem para la pestaña del menú
+	 * editar persona.
+	 */
 	private JMenuItem mntmEditarPersona;
+	/**
+	 * mntmEliminarPersona Variable privada de tipo JMenuItem para la pestaña del
+	 * menú eliminar persona.
+	 */
 	private JMenuItem mntmEliminarPersona;
+	/**
+	 * mtntmSalir Variable privada de tipo JMenuItem para la pestaña del menú salir.
+	 */
 	private JMenuItem mntmSalir;
+	/**
+	 * scrpContenedor Variable privada de tipo JScrollPane para el contenedor de los
+	 * paneles.
+	 */
 	private JScrollPane scrpContenedor;
 
 	/**

@@ -19,7 +19,7 @@ import java.awt.Font;
  * La clase PEliminarPersona es una clase descendiente de JPanel (es un panel) para representar 2 JLabel 
  * (Etiqueta de texto) y una JTable (Tabla)con los datos de todas las personas de la base de datos, y para 
  * incluir la funcionalidad de eliminar de la base de datos a la persona seleccionada de la tabla con un boton.
- * @author Diego Pozo
+ * @author jad
  * @version 1.0
  */
 
