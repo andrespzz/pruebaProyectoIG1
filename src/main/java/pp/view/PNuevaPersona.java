@@ -25,26 +25,53 @@ import javax.swing.JButton;
  *
  */
 public class PNuevaPersona extends JPanel {
-	/**
-	 * Variables estáticas de acceso público.
-	 * 
-	 * @param BTN_ANADIR  Variable estática que contiene el texto del botón Añadir
-	 *                    persona.
-	 * @param BTN_LIMPIAR Variable estática que contiene el texto del botón Limpiar
-	 *                    campos.
-	 */
+
 	private static final long serialVersionUID = 1L;
+	/**
+	 * BTN_ANADIR Variable estática que contiene el texto del botón Añadir persona.
+	 */
 	public static final String BTN_ANADIR = "Añadir persona";
+	/**
+	 * BTN_LIMPIAR Variable estática que contiene el texto del botón Limpiar campos.
+	 */
 	public static final String BTN_LIMPIAR = "Limpiar campos";
 
+	/**
+	 * txtApellidos Variable de tipo JTextField para la caja de texto Apellidos.
+	 */
 	private JTextField txtApellidos;
+	/**
+	 * txtNombrePersona Variable de tipo JTextField para la caja de texto Nombre.
+	 */
 	private JTextField txtNombrePersona;
+	/**
+	 * txtDniPersona Variable de tipo JTextField para la caja de texto DNI.
+	 */
 	private JTextField txtDniPersona;
+	/**
+	 * txtFechanac Variable de tipo JTextField para la caja de texto fecha de
+	 * nacimiento.
+	 */
 	private JTextField txtFechanac;
+	/**
+	 * spnEdad Variable de tipo JSpinner para introducir la edad.
+	 */
 	private JSpinner spnEdad;
+	/**
+	 * btnAnadirPersona Variable de tipo JButton para el botón Añadir persona.
+	 */
 	private JButton btnAnadirPersona;
+	/**
+	 * txtTelefono Variable de tipo JTextField para la caja de texto teléfono.
+	 */
 	private JTextField txtTelefono;
+	/**
+	 * txtDireccion Variable de tipo JTextField para la caja de texto dirección.
+	 */
 	private JTextField txtDireccion;
+	/**
+	 * btnLimpiarCampoAnadirPersona Variable de tipo JButton para el botón limpiar.
+	 */
 	private JButton btnLimpiarCampoAnadirPersona;
 
 	/**

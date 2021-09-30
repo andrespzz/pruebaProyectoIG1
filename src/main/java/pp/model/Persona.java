@@ -83,8 +83,10 @@ public class Persona {
 	public int getEdad() {
 		return Edad;
 	}
+
 	/**
 	 * Método para obtener el número de teléfono de la persona.
+	 * 
 	 * @return Retorna el número de teléfono de la persona.
 	 */
 	public String getTelefono() {
@@ -93,6 +95,7 @@ public class Persona {
 
 	/**
 	 * Método para obtener la dirección de la persona.
+	 * 
 	 * @return Retorna la dirección de la persona.
 	 */
 	public String getDireccion() {
