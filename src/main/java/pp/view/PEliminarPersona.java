@@ -15,26 +15,85 @@ import pp.control.PersonaListener;
 import pp.model.Persona;
 import java.awt.Font;
 
+/**
+ * La clase PEliminarPersona es una clase descendiente de JPanel (es un panel) para representar 2 JLabel 
+ * (Etiqueta de texto) y una JTable (Tabla)con los datos de todas las personas de la base de datos, y para 
+ * incluir la funcionalidad de eliminar de la base de datos a la persona seleccionada de la tabla con un boton.
+ * @author Diego Pozo
+ * @version 1.0
+ */
+
 public class PEliminarPersona extends JPanel {
+	/**
+	 * CLM_DNI es una variable estática de String para representar el nombre de una columna en la tabla.
+	 * Nombre de la columna: "DNI"
+	 */
 	public static final String CLM_DNI = "DNI";
+	
+	/**
+	 * CLM_NOMBRE es una variable estática de String para representar el nombre de una columna en la tabla.
+	 * Nombre de la columna: "NOMBRE"
+	 */
 	public static final String CLM_NOMBRE = "NOMBRE";
+	
+	/**
+	 * CLM_APELLIDOS es una variable estática de String para representar el nombre de una columna en la tabla.
+	 * Nombre de la columna: "APELLIDOS"
+	 */
 	public static final String CLM_APELLIDOS = "APELLIDOS";
+	
+	/**
+	 * CLM_FECHA es una variable estática de String para representar el nombre de una columna en la tabla.
+	 * Nombre de la columna: "FECHA"
+	 */
 	public static final String CLM_FECHA = "FECHA";
+	
+	/**
+	 * CLM_EDAD es una variable estática de String para representar el nombre de una columna en la tabla.
+	 * Nombre de la columna: "EDAD"
+	 */
 	public static final String CLM_EDAD = "EDAD";
+	
+	/**
+	 * CLM_DIRECCION es una variable estática de String para representar el nombre de una columna en la tabla.
+	 * Nombre de la columna: "DIRECCIÓN"
+	 */
 	public static final String CLM_DIRECCION = "DIRECCIÓN";
+	
+	/**
+	 * CLM_TELEFONO es una variable estática de String para representar el nombre de una columna en la tabla.
+	 * Nombre de la columna: "TELÉFON"
+	 */
 	public static final String CLM_TELEFONO = "TELÉFONO";
+	
+	/**
+	 * CLM_ELIMINAR es una variable estática de String para representar el nombre de un botón.
+	 * Nombre de botón: "Eiminar"
+	 */
 	public static final String BTN_ELIMINAR = "Eliminar";
 	
 	private JTable tblEliminarPersonas;
 	private JButton btnElimnarPersona;
 	private DefaultTableModel tblModel;
 	
+	/**
+	 * Método para inicializar el JPanel con el método initComponents();
+	 */
 	public PEliminarPersona() {
-		initComponent();
+		initComponents();
 		
 	}
-
-	private void initComponent() {
+	
+	/**
+	 * Método para inicializar el Layout, los componentes con atributos y para establecer el tamaño del panel.
+	 * 
+	 * <br><br>Componente 1: scrpListaEliminarPersonas, tipo JScrollPane.
+	 * <br>Componente 2: tblEliminarPersonas, tipo JTable.
+	 * <br>Componente 3: btnEliminarPersona, tipo JButton.
+	 * <br>Componente 4: lblInformacionEliminar, tipo JLabel.
+	 * <br>Componente 5: lblEliminarPersonas, tipo JLabel.
+	 */
+	private void initComponents() {
 		setLayout(null);
 		setSize(PersonaVP.ANCHO - 30, PersonaVP.ALTO - 70);
 		
@@ -63,6 +122,9 @@ public class PEliminarPersona extends JPanel {
 		configurarTabla();
 	}
 	
+	/**
+	 * Método para configurar el modelo de la tabla en columnas, cantidad y tamaño de las columnas.
+	 */
 	private void configurarTabla() {
 		tblModel = new DefaultTableModel() {
 			
@@ -93,6 +155,11 @@ public class PEliminarPersona extends JPanel {
 		
 	}
 	
+	/**
+	 * Método para cargar la tabla de datos a través del parametro listaPersonas, con un foreach para recorrer
+	 * el ArrayList.
+	 * @param listaPersonas ArrayList que contiene los objetos Personas.
+	 */
 	public void cargarTabla(ArrayList<Persona> listaPersonas) {
 		tblModel.setRowCount(0);
 		Object[] fila = new Object[7];
@@ -111,10 +178,18 @@ public class PEliminarPersona extends JPanel {
 		}
 	}
 	
+	/**
+	 * Método para establecer al btnEliminarPersona el PersonaListener 
+	 * @param listener PersonaListener es el listener que contiene las acciones de la aplicación.
+	 */
 	public void setListener (PersonaListener listener) {
 		btnElimnarPersona.addActionListener(listener);
 	}
 	
+	/**
+	 * Método para obtener el "dni" de un objeto Persona que esta en la tabla seleccionado
+	 * @return El "dni" del objeto persona seleccionado en la tabla.
+	 */
 	public String getPerSeleccionado() {
 		String dniPer = "";
 		if (tblEliminarPersonas.getSelectedRow() == -1) {
@@ -125,11 +200,21 @@ public class PEliminarPersona extends JPanel {
 		return dniPer;
 	}
 	
+	/**
+	 * Método para mostrar un mensaje de error en la aplicación 
+	 * a través de la opcion showMessageDialog de JOptionPane.
+	 * @param msj String para mostrar en el mensaje.
+	 */
 	public void mostrarMsjError(String msj) {
 		JOptionPane.showMessageDialog(this, msj, "Error de selección", JOptionPane.ERROR_MESSAGE);
 		
 	}
-
+	
+	/**
+	 * Método para mostrar un mensaje de información en la aplicación 
+	 * a través de la opcion showMessageDialog de JOptionPane..
+	 * @param msj String para mostrar en el mensaje.
+	 */
 	public void mostrarMsjInfo(String msj) {
 		JOptionPane.showMessageDialog(this, msj, "Información de operación", 
 				JOptionPane.INFORMATION_MESSAGE);		
