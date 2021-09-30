@@ -73,17 +73,17 @@ public class PEliminarPersona extends JPanel {
 	public static final String BTN_ELIMINAR = "Eliminar";
 	
 	/**
-	 * Variable  privada de tipo JTable para la tabla tblEliminarPersonas.
+	 * tblEliminarPersonas Variable  privada de tipo JTable para la tabla tblEliminarPersonas.
 	 */
 	private JTable tblEliminarPersonas;
 	
 	/**
-	 * Variable de tipo JButton para el boton btnEliminarPersona
+	 * btnEliminarPersona Variable de tipo JButton para el boton btnEliminarPersona
 	 */
 	private JButton btnElimnarPersona;
 	
 	/**
-	 * Variable privada de tipo DefaultTableModel para el modelo de tabla tblMoel que almacena
+	 * tblModel Variable privada de tipo DefaultTableModel para el modelo de tabla tblMoel que almacena
 	 * el modelo de la tabla.
 	 */
 	private DefaultTableModel tblModel;

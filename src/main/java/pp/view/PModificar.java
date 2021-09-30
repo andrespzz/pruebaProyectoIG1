@@ -36,16 +36,55 @@ public class PModificar extends JPanel {
 	public static final String BTN_BUSCAR = "Buscar persona";
 	public static final String BTN_GUARDAR = "Guardar Cambios";
 	public static final String BTN_CANCELAR = "Cancelar";
-
+	
+	/**
+	 * txtApellidos Variable privada de tipo JTextField para la caja de texto txtApellidos.
+	 */
 	private JTextField txtApellidos;
+	
+	/**
+	 * txtNombrePersona Variable privada de tipo JTextField para la caja de texto txtNombrePersona.
+	 */
 	private JTextField txtNombrePersona;
+	
+	/**
+	 * txtDniPersona Variable privada de tipo JTextField para la caja de texto txtDniPersona.
+	 */
 	private JTextField txtDniPersona;
+	
+	/**
+	 * txtFechanac Variable privada de tipo JTextField para la caja de texto txtFechanac.
+	 */
 	private JTextField txtFechanac;
+	
+	/**
+	 * xtTelefono Variable privada de tipo JTextField para la caja de texto txtTelefono.
+	 */
 	private JTextField txtTelefono;
+	
+	/**
+	 * txtDireccion Variable privada de tipo JTextField para la caja de texto txtDireccion.
+	 */
 	private JTextField txtDireccion;
+	
+	/**
+	 * spnEdad Variable privada de tipo JSpinner para introducir la edad.
+	 */
 	private JSpinner spnEdad;
+	
+	/**
+	 * btnGuardarCambios Variable privada de tipo JButton para el boton btnGuardarCambios.
+	 */
 	private JButton btnGuardarCambios;
+	
+	/**
+	 * btnCancelar Variable privada de tipo JButton para el boton btnCancelar.
+	 */
 	private JButton btnCancelar;
+	
+	/**
+	 * btnBuscar Variable privada de tipo JButton para el boton btnBuscar.
+	 */
 	private JButton btnBuscar;
 
 	/**
