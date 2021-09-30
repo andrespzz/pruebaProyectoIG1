@@ -15,7 +15,24 @@ import pp.model.Persona;
 
 import javax.swing.JButton;
 
+/**
+ * Clase descendiente de JPanel en la que se representan distintos componentes.
+ * En los componentes, el usuario podrá introducir datos que posteriormente
+ * serán utilizados y/o almacenados en una BBDD.
+ *
+ * @author jad
+ * @version 1.0
+ *
+ */
 public class PNuevaPersona extends JPanel {
+	/**
+	 * Variables estáticas de acceso público.
+	 * 
+	 * @param BTN_ANADIR  Variable estática que contiene el texto del botón Añadir
+	 *                    persona.
+	 * @param BTN_LIMPIAR Variable estática que contiene el texto del botón Limpiar
+	 *                    campos.
+	 */
 	private static final long serialVersionUID = 1L;
 	public static final String BTN_ANADIR = "Añadir persona";
 	public static final String BTN_LIMPIAR = "Limpiar campos";
@@ -30,103 +47,141 @@ public class PNuevaPersona extends JPanel {
 	private JTextField txtDireccion;
 	private JButton btnLimpiarCampoAnadirPersona;
 
+	/**
+	 * Método para inicializar el método que <b>initComponentes();</b>.
+	 */
 	public PNuevaPersona() {
 		initComponents();
 	}
 
+	/**
+	 * Método para definir, distribuir e inicializar componentes y características
+	 * del panel.
+	 */
 	private void initComponents() {
 		setSize(PersonaVP.ANCHO - 70, PersonaVP.ALTO - 30);
 
 		setLayout(null);
 
-		JLabel lblAnadirPersona = new JLabel("A\u00F1adir nueva persona");
-		lblAnadirPersona.setFont(new Font("Arial", Font.PLAIN, 20));
-		lblAnadirPersona.setBounds(36, 22, 217, 25);
+		JLabel lblAnadirPersona = new JLabel("AÑADIR NUEVA PERSONA");
+		lblAnadirPersona.setFont(new Font("Arial", Font.BOLD, 30));
+		lblAnadirPersona.setBounds(188, 70, 421, 36);
 		add(lblAnadirPersona);
 
 		JLabel lblNombrePersona = new JLabel("Nombre");
-		lblNombrePersona.setBounds(36, 63, 46, 14);
+		lblNombrePersona.setFont(new Font("Tahoma", Font.PLAIN, 19));
+		lblNombrePersona.setBounds(110, 133, 78, 17);
 		add(lblNombrePersona);
 
 		txtNombrePersona = new JTextField();
-		txtNombrePersona.setBounds(92, 60, 137, 20);
+		txtNombrePersona.setFont(new Font("Tahoma", Font.PLAIN, 19));
+		txtNombrePersona.setBounds(205, 129, 137, 25);
 		add(txtNombrePersona);
 		txtNombrePersona.setColumns(10);
 
 		JLabel lblApellidosPersona = new JLabel("Apellidos");
-		lblApellidosPersona.setBounds(280, 63, 59, 14);
+		lblApellidosPersona.setFont(new Font("Tahoma", Font.PLAIN, 19));
+		lblApellidosPersona.setBounds(367, 133, 95, 25);
 		add(lblApellidosPersona);
 
 		txtApellidos = new JTextField();
-		txtApellidos.setBounds(359, 60, 137, 20);
+		txtApellidos.setFont(new Font("Tahoma", Font.PLAIN, 19));
+		txtApellidos.setBounds(472, 133, 171, 25);
 		add(txtApellidos);
 		txtApellidos.setColumns(10);
 
 		JLabel lblDniPersona = new JLabel("DNI");
-		lblDniPersona.setBounds(36, 101, 46, 14);
+		lblDniPersona.setFont(new Font("Tahoma", Font.PLAIN, 19));
+		lblDniPersona.setBounds(110, 167, 59, 21);
 		add(lblDniPersona);
 
 		txtDniPersona = new JTextField();
-		txtDniPersona.setBounds(92, 98, 137, 20);
+		txtDniPersona.setFont(new Font("Tahoma", Font.PLAIN, 19));
+		txtDniPersona.setBounds(205, 168, 137, 26);
 		add(txtDniPersona);
 		txtDniPersona.setColumns(10);
 
 		JLabel lblFechaNac = new JLabel("Fecha nacimiento");
-		lblFechaNac.setBounds(280, 101, 107, 14);
+		lblFechaNac.setFont(new Font("Tahoma", Font.PLAIN, 19));
+		lblFechaNac.setBounds(367, 169, 168, 22);
 		add(lblFechaNac);
 
 		txtFechanac = new JTextField();
+		txtFechanac.setFont(new Font("Tahoma", Font.PLAIN, 19));
 		txtFechanac.setToolTipText("dd/mm/yyyy");
-		txtFechanac.setBounds(397, 98, 99, 20);
+		txtFechanac.setBounds(535, 168, 108, 26);
 		add(txtFechanac);
 		txtFechanac.setColumns(10);
 
 		JLabel lblEdad = new JLabel("Edad");
-		lblEdad.setBounds(36, 140, 46, 14);
+		lblEdad.setFont(new Font("Tahoma", Font.PLAIN, 19));
+		lblEdad.setBounds(110, 206, 59, 21);
 		add(lblEdad);
 
 		spnEdad = new JSpinner();
+		spnEdad.setFont(new Font("Tahoma", Font.PLAIN, 19));
 		spnEdad.setModel(new SpinnerNumberModel(1, 1, 120, 1));
-		spnEdad.setBounds(92, 137, 53, 20);
+		spnEdad.setBounds(205, 207, 53, 25);
 		add(spnEdad);
 
 		JLabel lblTelefono = new JLabel("Teléfono");
-		lblTelefono.setBounds(280, 140, 69, 14);
+		lblTelefono.setFont(new Font("Tahoma", Font.PLAIN, 19));
+		lblTelefono.setBounds(367, 209, 95, 25);
 		add(lblTelefono);
 
 		txtTelefono = new JTextField();
-		txtTelefono.setBounds(359, 137, 137, 20);
+		txtTelefono.setFont(new Font("Tahoma", Font.PLAIN, 19));
+		txtTelefono.setBounds(461, 209, 137, 25);
 		add(txtTelefono);
 		txtTelefono.setColumns(10);
 
 		JLabel lblDireccion = new JLabel("Dirección");
-		lblDireccion.setBounds(36, 178, 64, 14);
+		lblDireccion.setFont(new Font("Tahoma", Font.PLAIN, 19));
+		lblDireccion.setBounds(110, 244, 103, 21);
 		add(lblDireccion);
 
 		txtDireccion = new JTextField();
-		txtDireccion.setBounds(110, 175, 137, 20);
+		txtDireccion.setFont(new Font("Tahoma", Font.PLAIN, 19));
+		txtDireccion.setBounds(205, 245, 438, 25);
 		add(txtDireccion);
 		txtDireccion.setColumns(10);
 
 		btnAnadirPersona = new JButton(BTN_ANADIR);
-		btnAnadirPersona.setBounds(135, 206, 128, 23);
+		btnAnadirPersona.setFont(new Font("Tahoma", Font.PLAIN, 19));
+		btnAnadirPersona.setBounds(194, 285, 171, 31);
 		add(btnAnadirPersona);
 
 		btnLimpiarCampoAnadirPersona = new JButton(BTN_LIMPIAR);
-		btnLimpiarCampoAnadirPersona.setBounds(280, 206, 128, 23);
+		btnLimpiarCampoAnadirPersona.setFont(new Font("Tahoma", Font.PLAIN, 19));
+		btnLimpiarCampoAnadirPersona.setBounds(393, 285, 171, 31);
 		add(btnLimpiarCampoAnadirPersona);
 
 	}
 
+	/**
+	 * Método para hacer visible el panel.
+	 */
 	public void hacerVisible() {
 		setVisible(true);
 	}
 
+	/**
+	 * Método para asignar escuchadores a los componentes.
+	 * 
+	 * @param listener Variable que transmite funcionalidad al componente.
+	 */
 	public void setListener(PersonaListener listener) {
 		btnAnadirPersona.addActionListener(listener);
 		btnLimpiarCampoAnadirPersona.addActionListener(listener);
 	}
 
+	/**
+	 * Método para recoger y controlar datos introducidos por el usuario procedentes
+	 * de los componentes.
+	 * 
+	 * @return persona Variable de tipo Persona para almacenar datos introducidos
+	 *         por el usuario en los componentes de manera temporal.
+	 */
 	public Persona getDatos() {
 		Persona persona = null;
 
@@ -176,16 +231,29 @@ public class PNuevaPersona extends JPanel {
 		return persona;
 	}
 
+	/**
+	 * Método para mostrar un error de operación.
+	 * 
+	 * @param msj Variable contenedora del mensaje a mostrar.
+	 */
 	private void mostrarMsjError(String msj) {
 		JOptionPane.showMessageDialog(this, msj, "Error de operación", JOptionPane.ERROR_MESSAGE);
 
 	}
 
+	/**
+	 * Método para mostrar información de una operación.
+	 * 
+	 * @param msj Variable contenedora del mensaje a mostrar.
+	 */
 	public void mostrarMsjInfo(String msj) {
 		JOptionPane.showMessageDialog(this, msj, "Información de operación", JOptionPane.INFORMATION_MESSAGE);
 
 	}
 
+	/**
+	 * Método para limpiar los componentes existentes en el panel.
+	 */
 	public void limpiarComponentes() {
 		txtNombrePersona.setText("");
 		txtApellidos.setText("");

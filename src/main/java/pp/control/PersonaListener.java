@@ -15,6 +15,13 @@ import pp.view.PModificar;
 import pp.view.PNuevaPersona;
 import pp.view.PersonaVP;
 
+/**
+ * Clase que da funcionalidad a todos los componentes existentes.
+ * 
+ * @author jad
+ * @version 1.0
+ *
+ */
 public class PersonaListener implements ActionListener {
 	private PersonaVP pvp = new PersonaVP();
 	private PNuevaPersona pnp = new PNuevaPersona();
@@ -22,6 +29,14 @@ public class PersonaListener implements ActionListener {
 	private PEliminarPersona pep = new PEliminarPersona();
 	private PersonaPersistencia model;
 
+	/**
+	 * Constructor de la clase PersonaListener.
+	 * 
+	 * @param pvp  Variable de tipo PersonaVP.
+	 * @param pnp  Variable de tipo PNuevaPersona.
+	 * @param pmdf Variable de tipo PModificar.
+	 * @param pep  Variable de tipo PEliminarPersona
+	 */
 	public PersonaListener(PersonaVP pvp, PNuevaPersona pnp, PModificar pmdf, PEliminarPersona pep) {
 		super();
 		this.pvp = pvp;
@@ -31,6 +46,9 @@ public class PersonaListener implements ActionListener {
 		model = new PersonaPersistencia();
 	}
 
+	/**
+	 * Método que da funcionalidad a los componentes existentes.
+	 */
 	@Override
 	public void actionPerformed(ActionEvent ev) {
 		if (ev.getSource() instanceof JMenuItem) {
@@ -92,18 +110,17 @@ public class PersonaListener implements ActionListener {
 					pmdf.limpiarComponentes();
 				} else if (ev.getActionCommand().equals(PEliminarPersona.BTN_ELIMINAR)) {
 					String dniPer = pep.getPerSeleccionado();
-					
+
 					if (!dniPer.equals("")) {
-						int opcion = JOptionPane.showConfirmDialog(pep, "Se va a eliminar el registro "
-								+ "seleccionado. ¿Desea continuar?", 
-								"Confirmación de borrado", JOptionPane.YES_NO_OPTION,
-								JOptionPane.QUESTION_MESSAGE);
-						
+						int opcion = JOptionPane.showConfirmDialog(pep,
+								"Se va a eliminar el registro " + "seleccionado. ¿Desea continuar?",
+								"Confirmación de borrado", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
 						if (opcion == JOptionPane.YES_OPTION) {
 							int res = model.deletePersonas(dniPer);
-		
+
 							if (res == 1) {
-								pep.mostrarMsjInfo("Se ha eliminado el restaurante con exito");
+								pep.mostrarMsjInfo("La persona se ha eliminado con éxito");
 								consultarTablaEliminar();
 							} else {
 								pep.mostrarMsjError("No se ha podido eliminar la persona");
@@ -114,10 +131,14 @@ public class PersonaListener implements ActionListener {
 			}
 		}
 	}
-	
+
+	/**
+	 * Método que consulta los datos existentes en la BBDD y muestra la información
+	 * en una tabla.
+	 */
 	private void consultarTablaEliminar() {
 		ArrayList<Persona> listaPersonas;
-		
+
 		listaPersonas = model.selectPersonas();
 		pep.cargarTabla(listaPersonas);
 	}

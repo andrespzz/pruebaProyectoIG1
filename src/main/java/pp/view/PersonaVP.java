@@ -14,14 +14,37 @@ import javax.swing.JScrollPane;
 import pp.control.PersonaListener;
 import javax.swing.JLabel;
 
+/**
+ * Clase descendiente de JFrame para definir las características y/o componentes
+ * de la ventana.
+ * 
+ * @author jad
+ * @version 1.0
+ *
+ */
 public class PersonaVP extends JFrame {
-
-	public static final int ANCHO = 800;
-	public static final int ALTO = 650;
+	/**
+	 * Variables estáticas de acceso público.
+	 * 
+	 * @param ANCHO           Variable estática para representar el ancho de la
+	 *                        ventana principal.
+	 * @param ALTO            Variable estática para representar el alto de la
+	 *                        ventana principal.
+	 * @param ANADIRPERSONA   Variable estática que contiene el texto de una opción
+	 *                        de menú.
+	 * @param EDITARPERSONA   Variable estática que contiene el texto de una opción
+	 *                        de menú.
+	 * @param ELIMINARPERSONA Variable estática que contiene el texto de una opción
+	 *                        de menú.
+	 * @param MNTMSALIR       Variable estática que contiene el texto de una opción
+	 *                        de menú.
+	 */
+	public static final int ANCHO = 770;
+	public static final int ALTO = 550;
 
 	public static final String ANADIRPERSONA = "Añadir nueva persona";
 	public static final String EDITARPERSONA = "Editar persona";
-	public static final String ELIMINARPERSONA = "Eliminar persona";
+	public static final String ELIMINARPERSONA = "Consultar / eliminar persona";
 	public static final String MNTMSALIR = "Salir";
 
 	private JMenuItem mntmAnadirPersona;
@@ -30,12 +53,19 @@ public class PersonaVP extends JFrame {
 	private JMenuItem mntmSalir;
 	private JScrollPane scrpContenedor;
 
+	/**
+	 * Método para inicializar el método <b>initComponents();</b> y crear el menú.
+	 */
 	public PersonaVP() {
 		super("Gestión de personas");
 		initComponents();
 		crearMenu();
 	}
 
+	/**
+	 * Método para definir, distribuir e inicializar componentes y características
+	 * de la ventana.
+	 */
 	private void initComponents() {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 
@@ -50,6 +80,9 @@ public class PersonaVP extends JFrame {
 
 	}
 
+	/**
+	 * Método para crear el menú.
+	 */
 	private void crearMenu() {
 		JMenuBar menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
@@ -67,14 +100,27 @@ public class PersonaVP extends JFrame {
 		menuBar.add(mntmSalir);
 	}
 
+	/**
+	 * Método para hacer visible la ventana.
+	 */
 	public void hacerVisible() {
 		setVisible(true);
 	}
 
+	/**
+	 * Método para cargar paneles en la ventana.
+	 * 
+	 * @param panel Variable de tipo JPanel.
+	 */
 	public void cargarPanel(JPanel panel) {
 		scrpContenedor.setViewportView(panel);
 	}
 
+	/**
+	 * Método para asignar escuchadores a los componentes.
+	 * 
+	 * @param listener Variable que transmite funcionalidad al componente.
+	 */
 	public void setListener(PersonaListener listener) {
 		mntmAnadirPersona.addActionListener(listener);
 		mntmEditarPersona.addActionListener(listener);
@@ -82,6 +128,9 @@ public class PersonaVP extends JFrame {
 		mntmSalir.addActionListener(listener);
 	}
 
+	/**
+	 * Método para mostrar mensaje de confirmación de salida.
+	 */
 	public void mostrarMsjConfirm() {
 		int opcion = JOptionPane.showConfirmDialog(this, "¿Estás seguro de que deseas cerrar la aplicación?",
 				"Confirmación de salida", JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE);

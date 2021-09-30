@@ -9,11 +9,20 @@ import java.util.Properties;
 
 import org.sqlite.SQLiteConfig;
 
+/**
+ * Clase que realiza la conexión con la base de datos
+ * 
+ * @author jad
+ * 
+ */
 public class AccesoDb {
 
 	private String driver;
 	private String url;
 
+	/**
+	 * Método para crear la conexión con la BBDD.
+	 */
 	public AccesoDb() {
 		FileInputStream fis = null;
 
@@ -39,6 +48,14 @@ public class AccesoDb {
 		}
 
 	}
+
+	/**
+	 * Método para establecer la conexión con la BBDD.
+	 * 
+	 * @return con
+	 * @throws ClassNotFoundException Lanza una excepción en tiempo de ejecución.
+	 * @throws SQLException           Lanza una excepción de tipo SQL.
+	 */
 
 	public java.sql.Connection getConexion() throws ClassNotFoundException, SQLException {
 		Class.forName(driver);

@@ -43,21 +43,23 @@ public class PEliminarPersona extends JPanel {
 		add(scrpListaEliminarPersonas);
 		
 		tblEliminarPersonas = new JTable();
+		tblEliminarPersonas.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		tblEliminarPersonas.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		scrpListaEliminarPersonas.setViewportView(tblEliminarPersonas);
 		
 		btnElimnarPersona = new JButton(BTN_ELIMINAR);
-		btnElimnarPersona.setBounds(556, 117, 118, 23);
+		btnElimnarPersona.setFont(new Font("Tahoma", Font.PLAIN, 19));
+		btnElimnarPersona.setBounds(596, 112, 126, 32);
 		add(btnElimnarPersona);
 		
 		JLabel lblInformacionEliminar = new JLabel("Selecciona una persona para eliminar");
-		lblInformacionEliminar.setFont(new Font("Dialog", Font.PLAIN, 14));
-		lblInformacionEliminar.setBounds(48, 117, 296, 23);
+		lblInformacionEliminar.setFont(new Font("Dialog", Font.ITALIC, 19));
+		lblInformacionEliminar.setBounds(48, 117, 350, 23);
 		add(lblInformacionEliminar);
 		
-		JLabel lblEliminarPersona = new JLabel("Eliminar Persona");
-		lblEliminarPersona.setFont(new Font("Arial", Font.PLAIN, 20));
-		lblEliminarPersona.setBounds(48, 50, 175, 32);
+		JLabel lblEliminarPersona = new JLabel("CONSULTAR / ELIMINAR PERSONAS");
+		lblEliminarPersona.setFont(new Font("Arial", Font.BOLD, 30));
+		lblEliminarPersona.setBounds(118, 51, 542, 32);
 		add(lblEliminarPersona);
 		
 		configurarTabla();

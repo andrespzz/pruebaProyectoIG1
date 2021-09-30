@@ -8,8 +8,20 @@ import pp.view.PModificar;
 import pp.view.PNuevaPersona;
 import pp.view.PersonaVP;
 
+/**
+ * Clase que hace visible las ventanas, paneles e inicia la aplicación.
+ * 
+ * @author jad
+ * @version 1.0
+ *
+ */
 public class InicioPersona {
 
+	/**
+	 * Método ejecutable.
+	 * 
+	 * @param args
+	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 
