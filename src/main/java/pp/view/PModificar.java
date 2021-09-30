@@ -22,66 +22,74 @@ import javax.swing.JButton;
  *
  */
 public class PModificar extends JPanel {
-	/**
-	 * Variables estáticas de acceso público.
-	 * 
-	 * @param BTN_BUSCAR   Variable estática que contiene el texto del botón Buscar.
-	 * @param BTN_GUARDAR  Variable estática que contiene el texto del botón Guardar
-	 *                     cambios.
-	 * @param BTN_CANCELAR Variable estática que contiene el texto del botón
-	 *                     Cancelar.
-	 */
 	private static final long serialVersionUID = 1L;
 
-	public static final String BTN_BUSCAR = "Buscar persona";
-	public static final String BTN_GUARDAR = "Guardar Cambios";
-	public static final String BTN_CANCELAR = "Cancelar";
-	
 	/**
-	 * txtApellidos Variable privada de tipo JTextField para la caja de texto txtApellidos.
+	 * BTN_BUSCAR Variable estática que contiene el texto del botón Buscar.
+	 */
+	public static final String BTN_BUSCAR = "Buscar persona";
+	/**
+	 * BTN_GUARDAR Variable estática que contiene el texto del botón Guardar
+	 * cambios.
+	 */
+	public static final String BTN_GUARDAR = "Guardar Cambios";
+	/**
+	 * BTN_CANCELAR Variable estática que contiene el texto del botón Cancelar.
+	 */
+	public static final String BTN_CANCELAR = "Cancelar";
+
+	/**
+	 * txtApellidos Variable privada de tipo JTextField para la caja de texto
+	 * txtApellidos.
 	 */
 	private JTextField txtApellidos;
-	
+
 	/**
-	 * txtNombrePersona Variable privada de tipo JTextField para la caja de texto txtNombrePersona.
+	 * txtNombrePersona Variable privada de tipo JTextField para la caja de texto
+	 * txtNombrePersona.
 	 */
 	private JTextField txtNombrePersona;
-	
+
 	/**
-	 * txtDniPersona Variable privada de tipo JTextField para la caja de texto txtDniPersona.
+	 * txtDniPersona Variable privada de tipo JTextField para la caja de texto
+	 * txtDniPersona.
 	 */
 	private JTextField txtDniPersona;
-	
+
 	/**
-	 * txtFechanac Variable privada de tipo JTextField para la caja de texto txtFechanac.
+	 * txtFechanac Variable privada de tipo JTextField para la caja de texto
+	 * txtFechanac.
 	 */
 	private JTextField txtFechanac;
-	
+
 	/**
-	 * xtTelefono Variable privada de tipo JTextField para la caja de texto txtTelefono.
+	 * xtTelefono Variable privada de tipo JTextField para la caja de texto
+	 * txtTelefono.
 	 */
 	private JTextField txtTelefono;
-	
+
 	/**
-	 * txtDireccion Variable privada de tipo JTextField para la caja de texto txtDireccion.
+	 * txtDireccion Variable privada de tipo JTextField para la caja de texto
+	 * txtDireccion.
 	 */
 	private JTextField txtDireccion;
-	
+
 	/**
 	 * spnEdad Variable privada de tipo JSpinner para introducir la edad.
 	 */
 	private JSpinner spnEdad;
-	
+
 	/**
-	 * btnGuardarCambios Variable privada de tipo JButton para el boton btnGuardarCambios.
+	 * btnGuardarCambios Variable privada de tipo JButton para el boton
+	 * btnGuardarCambios.
 	 */
 	private JButton btnGuardarCambios;
-	
+
 	/**
 	 * btnCancelar Variable privada de tipo JButton para el boton btnCancelar.
 	 */
 	private JButton btnCancelar;
-	
+
 	/**
 	 * btnBuscar Variable privada de tipo JButton para el boton btnBuscar.
 	 */

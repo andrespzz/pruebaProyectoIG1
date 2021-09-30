@@ -20,7 +20,7 @@ public class InicioPersona {
 	/**
 	 * Método ejecutable.
 	 * 
-	 * @param args
+	 * @param args String Args.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {

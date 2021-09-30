@@ -20,6 +20,9 @@ import pp.model.Persona;
 public class PersonaPersistencia {
 	private AccesoDb adb;
 
+	/**
+	 *Método para crear la conexión con la BBDD.
+	 */
 	public PersonaPersistencia() {
 		adb = new AccesoDb();
 	}
