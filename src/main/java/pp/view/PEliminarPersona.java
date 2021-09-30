@@ -26,54 +26,66 @@ import java.awt.Font;
 public class PEliminarPersona extends JPanel {
 	/**
 	 * CLM_DNI es una variable estática de String para representar el nombre de una columna en la tabla.
-	 * Nombre de la columna: "DNI"
+	 * <br>Nombre de la columna: "DNI"
 	 */
 	public static final String CLM_DNI = "DNI";
 	
 	/**
 	 * CLM_NOMBRE es una variable estática de String para representar el nombre de una columna en la tabla.
-	 * Nombre de la columna: "NOMBRE"
+	 * <br>Nombre de la columna: "NOMBRE"
 	 */
 	public static final String CLM_NOMBRE = "NOMBRE";
 	
 	/**
 	 * CLM_APELLIDOS es una variable estática de String para representar el nombre de una columna en la tabla.
-	 * Nombre de la columna: "APELLIDOS"
+	 * <br>Nombre de la columna: "APELLIDOS"
 	 */
 	public static final String CLM_APELLIDOS = "APELLIDOS";
 	
 	/**
 	 * CLM_FECHA es una variable estática de String para representar el nombre de una columna en la tabla.
-	 * Nombre de la columna: "FECHA"
+	 * <br>Nombre de la columna: "FECHA"
 	 */
 	public static final String CLM_FECHA = "FECHA";
 	
 	/**
 	 * CLM_EDAD es una variable estática de String para representar el nombre de una columna en la tabla.
-	 * Nombre de la columna: "EDAD"
+	 * <br>Nombre de la columna: "EDAD"
 	 */
 	public static final String CLM_EDAD = "EDAD";
 	
 	/**
 	 * CLM_DIRECCION es una variable estática de String para representar el nombre de una columna en la tabla.
-	 * Nombre de la columna: "DIRECCIÓN"
+	 * <br>Nombre de la columna: "DIRECCIÓN"
 	 */
 	public static final String CLM_DIRECCION = "DIRECCIÓN";
 	
 	/**
 	 * CLM_TELEFONO es una variable estática de String para representar el nombre de una columna en la tabla.
-	 * Nombre de la columna: "TELÉFON"
+	 * <br>Nombre de la columna: "TELÉFON"
 	 */
 	public static final String CLM_TELEFONO = "TELÉFONO";
 	
 	/**
 	 * CLM_ELIMINAR es una variable estática de String para representar el nombre de un botón.
-	 * Nombre de botón: "Eiminar"
+	 * <br>Nombre de botón: "Eiminar"
 	 */
 	public static final String BTN_ELIMINAR = "Eliminar";
 	
+	/**
+	 * Variable  privada de tipo JTable para la tabla tblEliminarPersonas.
+	 */
 	private JTable tblEliminarPersonas;
+	
+	/**
+	 * Variable de tipo JButton para el boton btnEliminarPersona
+	 */
 	private JButton btnElimnarPersona;
+	
+	/**
+	 * Variable privada de tipo DefaultTableModel para el modelo de tabla tblMoel que almacena
+	 * el modelo de la tabla.
+	 */
 	private DefaultTableModel tblModel;
 	
 	/**
